@@ -36,10 +36,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:checkedButton="@+id/langEng"
         android:id="@+id/rGMaster">
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/langEng"
             android:text="English"/>
         <RadioButton
             android:layout_width="wrap_content"
@@ -60,11 +62,11 @@
         android:layout_height="wrap_content"
         android:text="Release date"/>
     <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Enter release date"
-            android:id="@+id/eTDate"
-            android:inputType="date"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter release date"
+        android:id="@+id/eTDate"
+        android:inputType="date"/>
 
     <CheckBox
         android:layout_width="wrap_content"

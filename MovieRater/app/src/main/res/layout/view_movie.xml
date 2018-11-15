@@ -8,6 +8,9 @@
         tools:context=".MainActivity"
         android:orientation="vertical">
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="3pt"/>
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="30pt"
@@ -21,7 +24,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="8pt"
+        android:id="@+id/tVName"
         android:text="Venom"/>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="3pt"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -31,7 +38,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="8pt"
+        android:id="@+id/tVDesc"
         android:text="When Eddie Brock acquires the powers of a symbiote, he will have to release his alter-ego Venom to save his life."/>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="3pt"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -41,7 +52,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="8pt"
+        android:id="@+id/tVLang"
         android:text="English"/>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="3pt"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -51,7 +66,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="8pt"
+        android:id="@+id/tVDate"
         android:text="03-10-2018"/>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="3pt"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -61,7 +80,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="8pt"
+        android:id="@+id/tVSuitableFC"
         android:text="Yes"/>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="3pt"/>
 
     <Button
         android:layout_width="match_parent"

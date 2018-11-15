@@ -3,8 +3,11 @@ package sg.edu.nyp.movierater
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.RadioButton
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.view_movie.*
+import kotlinx.android.synthetic.main.rate_movie.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -13,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         cBMaster.setOnClickListener {
-            if (cBMaster.isChecked == true){
+            if (cBMaster.isChecked){
                 cBSwitch.visibility = View.VISIBLE
             } else {
                 cBSwitch.visibility = View.INVISIBLE
@@ -28,6 +31,7 @@ class MainActivity : AppCompatActivity() {
         var name = eTName.text.toString()
         var desc = eTDesc.text.toString()
         var date = eTDate.text.toString()
+        var checkRadioBtn:RadioButton = findViewById(rGMaster.checkedRadioButtonId)
         var result = true
 
         if(name.isEmpty()){
@@ -45,10 +49,10 @@ class MainActivity : AppCompatActivity() {
 
         var text = ""
         if(result){
-            text += "Title = "+name
-            text += "\nOverview = "+desc
-            text += "\nRelease date = "+date
-            text += "\nLanguage = "
+            text += "Title = $name"
+            text += "\nOverview = $desc"
+            text += "\nRelease date = $date"
+            text += "\nLanguage = "+checkRadioBtn.text.toString()
             text += "\nSuitable for children below 13 = "+!(cBMaster.isChecked)
             if(cBMaster.isChecked){
                 text += "\nReason:"
@@ -59,12 +63,29 @@ class MainActivity : AppCompatActivity() {
             }
 
             Toast.makeText(this, text, Toast.LENGTH_LONG).show()
+
             setContentView(R.layout.view_movie)
+
+            // Setting value to view_movie.xml
+            tVName.text = name
+            tVDesc.text = desc
+            tVLang.text = checkRadioBtn.text.toString()
+            tVDate.text = date
+            if(cBMaster.isChecked)
+                tVSuitableFC.text = "No"
+            else
+                tVSuitableFC.text = "Yes"
+
         }
     }
 
     fun btnRateMovie(v: View){
+        var name = tVName.text.toString()
+
         setContentView(R.layout.rate_movie)
+
+        // Setting value to rate_movie.xml
+        tVReviewName.text = tVReviewName.text.toString() + name
     }
 
 }
