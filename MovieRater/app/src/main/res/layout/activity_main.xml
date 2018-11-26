@@ -72,7 +72,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Not suitable for all audience"
-        android:id="@+id/cBMaster"/>
+        android:id="@+id/cBMaster"
+        android:onClick="cBMasterClicked"/>
 
     <LinearLayout
         android:layout_width="match_parent"

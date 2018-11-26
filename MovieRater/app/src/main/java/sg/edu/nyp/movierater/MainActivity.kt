@@ -2,9 +2,12 @@ package sg.edu.nyp.movierater
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.view.ContextMenu
+import android.view.MenuItem
 import android.view.View
 import android.widget.RadioButton
 import android.widget.Toast
+import kotlinx.android.synthetic.main.landing_page.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.view_movie.*
 import kotlinx.android.synthetic.main.rate_movie.*
@@ -13,18 +16,35 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.landing_page)
 
-        cBMaster.setOnClickListener {
-            if (cBMaster.isChecked){
-                cBSwitch.visibility = View.VISIBLE
-            } else {
-                cBSwitch.visibility = View.INVISIBLE
-                cBViolence.isChecked = false
-                cBLanguage.isChecked = false
-            }
+        registerForContextMenu(tvLandingPageText)
+    }
+
+    // Create Context Menu
+    override fun onCreateContextMenu(menu: ContextMenu?, v: View?, menuInfo: ContextMenu.ContextMenuInfo?) {
+        super.onCreateContextMenu(menu, v, menuInfo)
+        if (v?.id == R.id.tvLandingPageText){
+            menu?.add(1, 1001, 1, "Add")
         }
+    }
 
+    // When Context Menu item selected
+    override fun onContextItemSelected(item: MenuItem?): Boolean {
+        if (item?.itemId == 1001){
+            setContentView(R.layout.activity_main)
+        }
+        return super.onContextItemSelected(item)
+    }
+
+    fun cBMasterClicked(v: View){
+        if (cBMaster.isChecked){
+            cBSwitch.visibility = View.VISIBLE
+        } else {
+            cBSwitch.visibility = View.INVISIBLE
+            cBViolence.isChecked = false
+            cBLanguage.isChecked = false
+        }
     }
 
     fun btnAddMovie(v: View){
