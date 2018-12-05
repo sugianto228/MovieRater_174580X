@@ -4,11 +4,11 @@ class Movies(var Title: String,
              var Overview: String,
              var Language: String,
              var Date: String,
-             var Suitable: Boolean,
+             var NotSuitable: Boolean,
              var SViolance: Boolean,
              var SLang: Boolean) {
-    var StarNum = 0
-    var Review = ""
+    var StarNum: Float = 0.toFloat()
+    var Review: String = ""
 
     fun updateData(name: String,
                desc: String,
@@ -21,12 +21,12 @@ class Movies(var Title: String,
         Overview = desc
         Language = lang
         Date = date
-        Suitable = suitable
+        NotSuitable = suitable
         SViolance = sViolence
         SLang = sLang
     }
 
-    fun updateReviewData(starNum: Int, review: String){
+    fun updateReviewData(starNum: Float, review: String){
         StarNum = starNum
         Review = review
     }

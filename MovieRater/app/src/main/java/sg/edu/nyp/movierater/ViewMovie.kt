@@ -7,12 +7,33 @@ import android.view.ContextMenu
 import android.view.MenuItem
 import android.view.View
 import kotlinx.android.synthetic.main.activity_view_movie.*
+import sg.edu.nyp.movierater.MainActivity.Companion.currentMovie
+import sg.edu.nyp.movierater.MainActivity.Companion.myMovieList
 
 class ViewMovie : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_movie)
+
+        viewMovieTitle.text = myMovieList[currentMovie].Title
+        viewMovieOverview.text = myMovieList[currentMovie].Overview
+        if (myMovieList[currentMovie].Review == "" && myMovieList[currentMovie].StarNum == 0.toFloat()){
+            viewMovieNoReviews.text = "No Reviews yet.\nLong press here to add your review."
+        } else {
+            viewMovieStar.visibility = View.VISIBLE
+            viewMovieStar.rating = myMovieList[currentMovie].StarNum
+            viewMovieReviews.visibility = View.VISIBLE
+            viewMovieReviews.text = myMovieList[currentMovie].Review
+            viewMovieNoReviews.visibility = View.GONE
+        }
+        viewMovieLang.text = myMovieList[currentMovie].Language
+        viewMovieDate.text = myMovieList[currentMovie].Date
+        if (myMovieList[currentMovie].NotSuitable){
+            viewMovieSuitable.text = "No"
+        } else {
+            viewMovieSuitable.text = "Yes"
+        }
 
         registerForContextMenu(viewMovieNoReviews)
     }

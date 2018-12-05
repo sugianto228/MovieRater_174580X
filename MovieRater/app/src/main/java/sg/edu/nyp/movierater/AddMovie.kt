@@ -9,6 +9,8 @@ import android.view.View
 import android.widget.RadioButton
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_add_movie.*
+import sg.edu.nyp.movierater.MainActivity.Companion.currentMovie
+import sg.edu.nyp.movierater.MainActivity.Companion.myMovieList
 
 class AddMovie : AppCompatActivity() {
 
@@ -75,7 +77,9 @@ class AddMovie : AppCompatActivity() {
 
                 Toast.makeText(this, text, Toast.LENGTH_LONG).show()
 
-                // ADD TO CLASS?????????????????????? PROB 1
+                var anyName = Movies(name, desc, checkRadioBtn, date, addMovieSuitable.isChecked, addMovieSuitableVio.isChecked, addMovieSuitableLang.isChecked)
+                myMovieList.add(anyName)
+                currentMovie = myMovieList.indexOf(anyName)
 
                 var viewMovieIntent = Intent(this, ViewMovie::class.java)
                 startActivity(viewMovieIntent)

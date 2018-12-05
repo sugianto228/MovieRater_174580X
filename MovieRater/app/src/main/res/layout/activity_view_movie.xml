@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:textSize="8pt"
         android:id="@+id/viewMovieTitle"
-        android:text="Venom"/>
+        android:text="changeThisToTitle"/>
     <Space
         android:layout_width="match_parent"
         android:layout_height="3pt"/>
@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         android:textSize="8pt"
         android:id="@+id/viewMovieOverview"
-        android:text="When Eddie Brock acquires the powers of a symbiote, he will have to release his alter-ego Venom to save his life."/>
+        android:text="changeThisToOverview"/>
     <Space
         android:layout_width="match_parent"
         android:layout_height="3pt"/>
@@ -80,7 +80,7 @@
         android:layout_height="wrap_content"
         android:textSize="8pt"
         android:id="@+id/viewMovieLang"
-        android:text="English"/>
+        android:text="changeThisToLang"/>
     <Space
         android:layout_width="match_parent"
         android:layout_height="3pt"/>
@@ -94,7 +94,7 @@
         android:layout_height="wrap_content"
         android:textSize="8pt"
         android:id="@+id/viewMovieDate"
-        android:text="03-10-2018"/>
+        android:text="changeThisToDate"/>
     <Space
         android:layout_width="match_parent"
         android:layout_height="3pt"/>
@@ -108,6 +108,6 @@
         android:layout_height="wrap_content"
         android:textSize="8pt"
         android:id="@+id/viewMovieSuitable"
-        android:text="Yes"/>
+        android:text="changeThisToYes/No"/>
 
 </LinearLayout>

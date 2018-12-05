@@ -7,6 +7,8 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_rate_movie.*
+import sg.edu.nyp.movierater.MainActivity.Companion.currentMovie
+import sg.edu.nyp.movierater.MainActivity.Companion.myMovieList
 
 class RateMovie : AppCompatActivity() {
 
@@ -35,6 +37,8 @@ class RateMovie : AppCompatActivity() {
             var output = Intent()
             output.putExtra(COMMENT, rateMovieComment.text.toString())
             output.putExtra(STARS, rateMovieStars.rating.toString())
+
+            myMovieList[currentMovie].updateReviewData(rateMovieStars.rating, rateMovieComment.text.toString())
 
             setResult(Activity.RESULT_OK, output)
 
