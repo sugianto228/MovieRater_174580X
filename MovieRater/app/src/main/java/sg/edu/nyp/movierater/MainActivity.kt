@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
         if (myMovieList.isNotEmpty()){
             for (i in myMovieList.indices){
                 if (v?.id == i){
-                    menu?.add(1, 999,1,"Edit")
+                    menu?.add(1, 2000+i,1,"Edit")
                 }
             }
         } else {
@@ -78,8 +78,14 @@ class MainActivity : AppCompatActivity() {
         if (item?.itemId == 1001){
             var addMovieIntent = Intent(this, AddMovie::class.java)
             startActivity(addMovieIntent)
-        } else if (item?.itemId == 999){
-            // GO TO EDIT MOVIE PAGE!!! LEFT THIS NOT DONE
+        } else {
+            for (i in myMovieList.indices){
+                if (item?.itemId == 2000+i){
+                    currentMovie = i;
+                    var editMovieIntent = Intent(this, EditMovie::class.java)
+                    startActivity(editMovieIntent)
+                }
+            }
         }
         return super.onContextItemSelected(item)
     }

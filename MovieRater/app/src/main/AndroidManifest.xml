@@ -16,12 +16,18 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".AddMovie"
-            android:parentActivityName=".MainActivity"></activity>
-        <activity android:name=".ViewMovie"
-            android:parentActivityName=".MainActivity"></activity>
-        <activity android:name=".RateMovie"
-            android:parentActivityName=".ViewMovie"></activity>
+        <activity
+                android:name=".AddMovie"
+                android:parentActivityName=".MainActivity"/>
+        <activity
+                android:name=".ViewMovie"
+                android:parentActivityName=".MainActivity"/>
+        <activity
+                android:name=".RateMovie"
+                android:parentActivityName=".ViewMovie"/>
+        <activity
+                android:name=".EditMovie"
+                android:parentActivityName=".MainActivity"/>
     </application>
 
 </manifest>
