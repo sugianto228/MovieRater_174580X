@@ -16,6 +16,7 @@ class ViewMovie : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_movie)
 
+        // Set values to be shown
         viewMovieTitle.text = myMovieList[currentMovie].Title
         viewMovieOverview.text = myMovieList[currentMovie].Overview
         if (myMovieList[currentMovie].Review == "" && myMovieList[currentMovie].StarNum == 0.toFloat()){
@@ -31,6 +32,13 @@ class ViewMovie : AppCompatActivity() {
         viewMovieDate.text = myMovieList[currentMovie].Date
         if (myMovieList[currentMovie].NotSuitable){
             viewMovieSuitable.text = "No"
+            if (myMovieList[currentMovie].SViolance && myMovieList[currentMovie].SLang){
+                viewMovieSuitable.text = viewMovieSuitable.text.toString() + " (Violence & Language)"
+            } else if (myMovieList[currentMovie].SViolance){
+                viewMovieSuitable.text = viewMovieSuitable.text.toString() + " (Violence)"
+            } else if (myMovieList[currentMovie].SLang){
+                viewMovieSuitable.text = viewMovieSuitable.text.toString() + " (Language)"
+            }
         } else {
             viewMovieSuitable.text = "Yes"
         }
@@ -72,5 +80,5 @@ class ViewMovie : AppCompatActivity() {
                 viewMovieNoReviews.visibility = View.GONE
             }
         }
-}
+    }
 }
