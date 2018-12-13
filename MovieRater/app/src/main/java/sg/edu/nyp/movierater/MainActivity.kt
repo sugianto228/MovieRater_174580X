@@ -42,6 +42,11 @@ class MainActivity : AppCompatActivity() {
                 textView.setTextSize(17.toFloat())
                 textView.setMinHeight(150)
                 textView.setId(i)
+                textView.setOnClickListener {
+                    currentMovie = i;
+                    var viewMovieIntent = Intent(this, ViewMovie::class.java)
+                    startActivity(viewMovieIntent)
+                }
                 linearLayout?.addView(textView)
                 registerForContextMenu(textView)
 
